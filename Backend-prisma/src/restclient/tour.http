@@ -1,0 +1,39 @@
+### Create Tour
+POST http://localhost:3000/tour/new-destination
+Content-Type: application/json
+ 
+{
+  "image": "https://th.bing.com/th/id/OIP.IugR_5yEN0rFQxWkJfihEgHaF7?rs=1&pid=ImgDetMain",
+  "title": "Water fall",
+  "description": "visiting china falls",
+  "destination": "Nyeri",
+  "duration": "4 days",
+  "price": "10000",
+  "tourType": "Hike"
+}
+ 
+### Get all tours
+GET http://localhost:3000/tour/all-destinations
+Content-Type: application/json
+ 
+### Update tour
+PUT http://localhost:3000/tour/modify-destination/1f3f5a87-f6e0-4ccb-894e-b1f11717b3fd
+Content-Type: application/json
+ 
+{
+  "image": "https://images.virginexperiencedays.co.uk/images/product/main/online-wildlife-photography-course-23074007.jpg",
+  "title": "Game rangers",
+  "description": "Days with wild animals",
+  "destination": "Nakuru",
+  "duration": "5 days",
+  "price": "10000",
+  "tourType": "park"
+}
+ 
+### Get one tour
+GET http://localhost:3000/tour/one-destination/86c0bd0e-3411-498c-b05e-dab942a72582
+Content-Type: application/json
+ 
+### Delete a destination
+DELETE http://localhost:3000/tour/delete-destination/2cf91254-f204-4e63-b4cd-c6c54acdbf93
+Content-Type: application/json

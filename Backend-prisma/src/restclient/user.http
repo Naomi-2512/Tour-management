@@ -1,0 +1,33 @@
+### Create user
+POST http://localhost:3000/user/create
+content-Type: application/json
+
+{
+   "firstName": "Kristen",
+   "lastName": "Victoria",
+   "profileImage": "https://wallpapercave.com/wp/wp7048688.jpg",
+   "email":"kristenv@gmail.com",
+   "password": "kris1234",
+   "role": ""
+}
+
+### update user
+PUT http://localhost:3000/user/update-user/d4bb5d61-42b1-4bd7-9fd5-98bb8d57d7db
+content-Type: application/json
+
+{
+   "firstName": "Jane",
+   "lastName": "Grace",
+   "profileImage": "https://th.bing.com/th/id/OIP.ybNUEwKEf7WR8VIllTWk0wHaE7?rs=1&pid=ImgDetMain",
+   "email":"janedoe@gmail.com",
+   "password": "Jane1234",
+   "role": "user"
+}
+
+### delete user
+DELETE  http://localhost:3000/user/delete/97e1fb25-5ed5-428e-a775-67c04097365b
+Content-Type: application/json
+
+### get all users
+GET  http://localhost:3000/user/all-users
+Content-Type: application/json
