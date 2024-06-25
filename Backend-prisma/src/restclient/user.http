@@ -25,9 +25,13 @@ content-Type: application/json
 }
 
 ### delete user
-DELETE  http://localhost:3000/user/delete/97e1fb25-5ed5-428e-a775-67c04097365b
+DELETE  http://localhost:3000/user/delete/0af2a87e-6c29-4bb5-ae29-142d08122c0b
 Content-Type: application/json
 
 ### get all users
 GET  http://localhost:3000/user/all-users
+Content-Type: application/json
+
+### get one users
+GET  http://localhost:3000/user/one-user/423752a5-70e2-4f4a-96dd-c2ece1179573
 Content-Type: application/json

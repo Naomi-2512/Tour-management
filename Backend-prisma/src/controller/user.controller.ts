@@ -58,5 +58,20 @@ export class userController{
             })
         }
     }
+
+    async fetchSingleUser(req:Request, res:Response){
+        try {
+            let {userId} = req.params
+
+            let response = await service.fetchSingleUser(userId)
+            
+            return res.json(response)
+
+        } catch (error) {
+            return res.json({
+                error
+            })
+        }
+    }
 }
 

@@ -9,6 +9,7 @@ user_router.post('/create', controller.createUser)
 user_router.get('/all-users', controller.getAllUsers)
 user_router.put('/update-user/:userId', controller.updateUserDetails)
 user_router.delete('/delete/:userId', controller.deleteUser)
+user_router.get('/one-user/:userId', controller.fetchSingleUser)
 
 
 export default user_router

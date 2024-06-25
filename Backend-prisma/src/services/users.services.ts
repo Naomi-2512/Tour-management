@@ -94,4 +94,20 @@ export class userService{
         
     }
 
+    async fetchSingleUser(userId:string){
+        let user = await (await DbHelper.query(`SELECT * FROM Users WHERE userId = '${userId}'`)).recordset
+
+        console.log(user);
+        
+        if(!user[0].userId) {
+            return {
+                error: "User not found"
+            }
+        }else{
+            return {
+                user: user[0]
+            }
+        }
+    }
+
 }
