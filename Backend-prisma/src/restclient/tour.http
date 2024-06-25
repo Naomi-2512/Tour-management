@@ -35,5 +35,5 @@ GET http://localhost:3000/tour/one-destination/86c0bd0e-3411-498c-b05e-dab942a72
 Content-Type: application/json
  
 ### Delete a destination
-DELETE http://localhost:3000/tour/delete-destination/2cf91254-f204-4e63-b4cd-c6c54acdbf93
+DELETE http://localhost:3000/tour/delete-destination/ed70b5db-e5f1-4d4e-9de0-312df1816850
 Content-Type: application/json

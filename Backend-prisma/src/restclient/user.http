@@ -3,12 +3,12 @@ POST http://localhost:3000/user/create
 content-Type: application/json
 
 {
-   "firstName": "Kristen",
-   "lastName": "Victoria",
-   "profileImage": "https://wallpapercave.com/wp/wp7048688.jpg",
-   "email":"kristenv@gmail.com",
-   "password": "kris1234",
-   "role": ""
+   "firstName": "Naomi",
+   "lastName": "Chege",
+   "profileImage": "https://th.bing.com/th/id/OIP.ybNUEwKEf7WR8VIllTWk0wHaE7?rs=1&pid=ImgDetMain",
+   "email":"naomichege2512@gmail.com",
+   "password": "Nakeez2512",
+   "role": "admin"
 }
 
 ### update user
@@ -19,7 +19,7 @@ content-Type: application/json
    "firstName": "Jane",
    "lastName": "Grace",
    "profileImage": "https://th.bing.com/th/id/OIP.ybNUEwKEf7WR8VIllTWk0wHaE7?rs=1&pid=ImgDetMain",
-   "email":"janedoe@gmail.com",
+   "email":"janegrace@gmail.com",
    "password": "Jane1234",
    "role": "user"
 }

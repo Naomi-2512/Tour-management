@@ -10,8 +10,7 @@ export class userService{
 
     async createUser(user:user){
         let hashedPassword = bcrypt.hashSync(user.password, 6)
-
-        //check if email exists
+        
         let emailExists = (await DbHelper.query(`SELECT * FROM Users WHERE email = '${user.email}'`)).recordset
         
         if(!lodash.isEmpty(emailExists)){       
@@ -25,7 +24,7 @@ export class userService{
             lastName   : user.lastName, 
             profileImage: user.profileImage,
             email      : user.email, 
-            password   : user.password, 
+            password   : hashedPassword, 
             role       : user.role})
         ).rowsAffected;
 

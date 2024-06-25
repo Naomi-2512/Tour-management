@@ -34,3 +34,7 @@ export interface booking{
     tourId : string
     booked : boolean
 }
+export interface login_details{
+    email:string,
+    password:string
+}
