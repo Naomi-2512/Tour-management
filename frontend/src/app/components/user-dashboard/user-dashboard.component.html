@@ -1,0 +1,45 @@
+    <header>
+        <h1>Xplora Tours</h1>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <h1>User Dashboard</h1>
+            <a href="#home">Home</a>
+            <a (click)="display = 'profile'">My Profile</a>
+            <a (click)="display = 'tours'">Available Tours</a>
+            <a (click)="display = 'bookings'">Track Bookings</a>
+            <a href="/login">Logout</a>
+        </div>
+        <div class="main-content">
+            <div class="tours" *ngIf="display == 'tours'" >
+                    
+                <div class="displayTours" *ngFor="let tour of tours let i = index">
+                    <img [src]="tour.image" alt="an image of the tour view">
+                    <h1>{{tour.title}}</h1>
+                    <h2>Destination:{{tour.destination}}</h2>
+                    <h3>{{tour.description}}</h3>
+                    <h4>Duration:{{tour.duration}}</h4>
+                    <h5>price:sh{{tour.price}}</h5>
+                    <div class="btn">
+                        <button>book</button>
+                        <button>Review</button>
+                    </div>
+                </div>
+            </div>
+            <div class="profile" *ngIf="display == 'profile'">
+                <div class="displayProfile" *ngIf="profiles">
+                    <img [src]="profiles.profileImage" alt="user's image">
+                    <h3>firstname:{{profiles.firstName}}</h3>
+                    <h3>lastname:{{profiles.lastName}}</h3>
+                    <h3>Email:{{profiles.email}}</h3>
+                    <div class="btn">
+                        <button>Edit Profile</button>
+                    </div>
+                </div>
+            </div>
+            <div class="booking" *ngIf="display == 'bookings'">
+                All booked trips
+            </div>
+        </div>
+    </div>
+

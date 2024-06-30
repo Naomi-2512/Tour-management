@@ -1,0 +1,120 @@
+<header>
+    <h1>Xplora Tours</h1>
+</header>
+<div class="container">
+    <div class="sidebar">
+        <h1>Admin Dashboard</h1>
+        <a href="#home">Home</a>
+        <a (click)="display = 'profile'">My Profile</a>
+        <a (click)="display = 'tours'">Tours</a>
+        <a (click)="display = 'users'">users</a>
+        <a href="/login">Logout</a>
+    </div>
+    <div class="main-content">
+        <button  (click)="createVisible()">Add Tour</button>
+        <div class="tours" *ngIf="display == 'tours'" >
+            
+            <div class="displayTours" *ngFor="let tour of tours let i = index">
+                <img [src]="tour.image" alt="an image of the tour view">
+                <h1>{{tour.title}}</h1>
+                <h2>Destination:{{tour.destination}}</h2>
+                <h3>{{tour.description}}</h3>
+                <h4>Duration:{{tour.duration}}</h4>
+                <h5>price:sh{{tour.price}}</h5>
+                <div class="btn">
+                    <button>Delete</button>
+                    <button (click)="createVisible1(tour.tourId,tour.image,tour.tourType,tour.title,tour.destination,tour.description,tour.duration,tour.price)">update</button>
+                </div>
+            </div>
+        </div>
+        <div class="users" *ngIf="display == 'users'">
+            <div class="displayUsers" *ngFor="let user of users let i = index">
+                <img [src]="user.profileImage" alt="user's image">
+                <h3>firstname:{{user.firstName}}</h3>
+                <h3>lastname:{{user.lastName}}</h3>
+                <h3>Email:{{user.email}}</h3>
+                <div class="btn">
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="profile" *ngIf="display == 'profile'">
+            <div class="displayProfile" *ngIf="profiles">
+                <img [src]="profiles.profileImage" alt="user's image">
+                <h3>firstname:{{profiles.firstName}}</h3>
+                <h3>lastname:{{profiles.lastName}}</h3>
+                <h3>Email:{{profiles.email}}</h3> 
+                <div class="btn">
+                    <button>Edit profile</button>
+                </div>
+            </div>
+            
+        </div>
+        <div class="form-div" [style]="visible">
+            <form  #createTour="ngForm" (ngSubmit)="createNewTour(createTour.value)">
+                <div class="close">
+                    <button (click)="createInvisible()">X</button>
+                </div>
+                <label for="image">image</label>
+                <input ngModel type="text" id="image" name="image" required>
+                tourId;.
+                <label for="tourType">tourType</label>
+                <select ngModel id="tourType" name="tourType" required>
+                <option value="Hikes">Hikes</option>
+                <option value="cultural-excursions">Cultural Excursions</option>
+                <option value="weekend-getaways">Weekend Getaways</option>
+                </select>
+                
+                <label for="title">title</label>
+                <input ngModel type="text" id="title" name="title" required>
+                
+                <label for="description"> description</label>
+                <input ngModel type="text" id="description" name="description" required>
+                
+                <label for="destination">destination</label>
+                <input ngModel type="text" id="destination" name="destination" required>
+                
+                <label for="duration">duration</label>
+                <input ngModel type="text" id="duration" name="duration" required>
+                <label for="price">price</label>
+                <input ngModel type="text" id="price" name="price" required>
+                
+                <button type="submit" >Create Tour</button>
+            </form>
+        </div>
+        <div class="form-div" [style]="visible1">
+            <form  #updateTour="ngForm" (ngSubmit)="updateNewTour(updateTour.value)">
+                <div class="close">
+                    <button (click)="createInvisible1()">X</button>
+                </div>
+                <label for="image">image</label>
+                <input ngModel type="text" id="image" name="image" required>
+                
+                <label for="tourType">tourType</label>
+                <select ngModel id="tourType" name="tourType" required>
+                <option value="Hikes">Hikes</option>
+                <option value="cultural-excursions">Cultural Excursions</option>
+                <option value="weekend-getaways">Weekend Getaways</option>
+                </select>
+                
+                <label for="title">title</label>
+                <input ngModel type="text" id="title" name="title" required>
+                
+                <label for="description"> description</label>
+                <input ngModel type="text" id="description" name="description" required>
+                
+                <label for="destination">destination</label>
+                <input ngModel type="text" id="destination" name="destination" required>
+                
+                <label for="duration">duration</label>
+                <input ngModel type="text" id="duration" name="duration" required>
+                <label for="price">price</label>
+                <input ngModel type="text" id="price" name="price" required>
+                
+                <button type="submit" >Update Tour</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

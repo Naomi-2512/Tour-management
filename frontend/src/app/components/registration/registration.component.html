@@ -1,0 +1,33 @@
+
+    <header>
+        <h1>Xplora Tours</h1>
+    </header>
+    <div class="container">
+        <h2>Register</h2>
+        <form #registrationForm="ngForm" (ngSubmit)="registerUser(registrationForm.value)">
+            <label for="firstname">First Name</label>
+            <input [style]="text_color" ngModel type="text" id="firstname" name="firstName" placeholder="" required>
+            
+            <label for="lastname">Last Name</label>
+            <input [style]="text_color" ngModel type="text" id="lastname" name="lastName" required>
+            
+            <label for="profileimage">Profile Image</label>
+            <input [style]="text_color" ngModel type="text" id="profileimage" name="profileImage" required>
+            
+            <label for="email">Email</label>
+            <input [style]="text_color" ngModel type="email" id="email" name="email" required>
+            
+            <label for="password">Password</label>
+            <input ngModel type="password" id="password" name="password" required>
+
+            <label for="password">Confirm Password</label>
+            <input ngModel type="password" id="password1" name="Confirmpassword" required>
+            
+            <button type="submit">Register</button>
+        </form>
+        <div class="login-link">
+            <p style="color: black;">Already have an account? <a href="/login">Login here</a></p>
+            <a routerLink = '/'>BACK HOME</a>
+        </div>
+    </div>
+
